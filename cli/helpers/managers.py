@@ -17,9 +17,7 @@ class ConfigManager:
         self.filename = filename
         self.file = os.path.join(
             pathlib.Path(__file__).parent.absolute(), filename)
-        self.create_config_ini_settings = aioify(object=self.create_config_ini_settings)
-        self.update_config_values = aioify(object=self.update_config_values)
-        if filepath:
+        if filepath is not None:
             self.file = os.path.join(filepath, filename)
 
     @encode_pass
@@ -60,6 +58,7 @@ class FileManager:
 
     def __init__(self, parent_dir, ignore=None):
         self.parent_dir = parent_dir
+        self.create_files_and_directory = aioify(obj=self.create_files_and_directory)
 
         if ignore is not None and type(ignore) == list:
             self.ignored_extensions.extend(ignore)
@@ -93,7 +92,7 @@ class FileManager:
         """
         return file.split('.')[-1] in self.ignored_extensions
 
-    async def create_files_and_directory(self, sub_dirs, filenames):
+    def create_files_and_directory(self, sub_dirs, filenames):
         """Creates files and directories in a specific path.
         :param sub_dirs:     a list of dirs ans sub_dirs that needs to be created.
         :param filenames     a list of filenames, formatted as path/file.txt
