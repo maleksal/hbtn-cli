@@ -22,6 +22,13 @@ $ python3 -m pip install .
 ## Usage
 
 ```console
+# Input your intranet credentials
+$ hbtn config init
+
+# To automate a project
+$ hbtn fetch <project URL>
+
+# for help
 $ hbtn --help
 Usage: hbtn [OPTIONS] COMMAND [ARGS]...
 
