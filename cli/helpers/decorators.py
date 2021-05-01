@@ -5,19 +5,6 @@ import asyncio
 from base64 import b64encode, b64decode
 from functools import wraps
 
-import aioify
-
-
-def to_async(f):
-    """make sync function to async.
-    """
-
-    @wraps(f)
-    def make_async(*args, **kwargs):
-        return aioify.aioify(f)(*args, **kwargs)
-
-    return make_async
-
 
 def decode_pass(passwd):
     """Decode base64 string.

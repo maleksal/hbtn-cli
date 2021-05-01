@@ -5,8 +5,9 @@ import os
 import pathlib
 from configparser import ConfigParser
 
+from aioify import aioify
+
 from .decorators import encode_pass, decode_pass
-from .decorators import to_async
 
 
 class ConfigManager:
@@ -16,6 +17,8 @@ class ConfigManager:
         self.filename = filename
         self.file = os.path.join(
             pathlib.Path(__file__).parent.absolute(), filename)
+        self.create_config_ini_settings = aioify(object=self.create_config_ini_settings)
+        self.update_config_values = aioify(object=self.update_config_values)
         if filepath:
             self.file = os.path.join(filepath, filename)
 
@@ -61,7 +64,6 @@ class FileManager:
         if ignore is not None and type(ignore) == list:
             self.ignored_extensions.extend(ignore)
 
-    @to_async
     async def process_data(self, data):
         """Process and create files
         :param data:    dict object.
@@ -91,7 +93,6 @@ class FileManager:
         """
         return file.split('.')[-1] in self.ignored_extensions
 
-    @to_async
     async def create_files_and_directory(self, sub_dirs, filenames):
         """Creates files and directories in a specific path.
         :param sub_dirs:     a list of dirs ans sub_dirs that needs to be created.
