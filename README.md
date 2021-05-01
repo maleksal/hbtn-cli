@@ -2,7 +2,7 @@
 
 Hbtn is a cli-application created for Holberton school students. Create project files, modules... with one step.
 
-<img src="/home/cyber/Desktop/to_publish/demo.gif" alt="alt" style="zoom:150%;" />
+<img src="https://github.com/maleksal/hbtn-cli/blob/main/demo.gif"  style="zoom:150%;" />
 
 ## Installation
 
