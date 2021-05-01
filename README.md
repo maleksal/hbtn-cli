@@ -22,7 +22,7 @@ $ python3 -m pip install .
 ## Usage
 
 ```console
-# Input your intranet credentials
+# Enter your intranet credentials
 $ hbtn config init
 
 # To automate a project
