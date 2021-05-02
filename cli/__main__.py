@@ -92,9 +92,16 @@ def show():
     ]
 
 
+@click.command()
+def remove():
+    """remove config file"""
+    config_manager.delete_config_file()
+
+
 config.add_command(edit)
 config.add_command(init)
 config.add_command(show)
+config.add_command(remove)
 
 if __name__ == "__main__":
     main()
