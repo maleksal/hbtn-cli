@@ -52,6 +52,10 @@ class ConfigManager:
             config[k] = v if v else ""
         self.create_config_ini_settings(**config)
 
+    def delete_config_file(self):
+        if os.path.exists(self.file):
+            os.remove(self.file)
+
 
 class FileManager:
     ignored_extensions = ['png', 'jpeg', 'icon', 'jpg']
