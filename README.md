@@ -17,7 +17,15 @@ $ cd hbtn-cli
 
 # install
 $ python3 -m pip install .
+
+# update: cd to hbtn-cli
+$ git pull && python3 -m pip install . -U
+
+# uninstall
+$ hbtn config remove && python3 -m pip uninstall hbtn-cli
 ```
+
+
 
 ## Usage
 
