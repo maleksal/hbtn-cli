@@ -15,8 +15,7 @@ setup(
             'hbtn = cli.__main__:main',
         ],
     },
-    packages=find_packages(),
+    packages=find_packages(exclude='tests'),
     python_requires="~=3.6",
-    install_requires=read_requirements()
-
+    install_requires=read_requirements(),
 )
