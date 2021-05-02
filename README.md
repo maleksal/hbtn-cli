@@ -25,7 +25,9 @@ $ git pull && python3 -m pip install . -U
 $ hbtn config remove && python3 -m pip uninstall hbtn-cli
 ```
 
-
+> Error msg:  "Can't uninstall 'hbtn-cli'. No files were found to uninstall."
+>
+> Fix : hbtn config remove && cd /tmp && python3 -m pip uninstall hbtn-cli
 
 ## Usage
 
