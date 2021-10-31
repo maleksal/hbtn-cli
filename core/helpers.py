@@ -1,10 +1,8 @@
-from configparser import ConfigParser
-from base64 import b64encode, b64decode
-
-from typing import List, Tuple, Dict, Any, Union
-
-import pathlib
 import os
+import pathlib
+from base64 import b64encode, b64decode
+from configparser import ConfigParser
+from typing import List, Tuple, Dict, Any, Union
 
 
 def encrypted(data: str) -> str:
@@ -32,7 +30,7 @@ def create_files(root_dir: str, project_details: Union[Dict[str, List[Dict[str, 
     for task in project_details["tasks"]:
         for file in task['github_file']:
             formatted_file = f"{root_dir}/{github_repo}/{github_dir}/{file}"
-            dirs = '/'.join(formatted_file.split('/')[:-1]) + '/'\
+            dirs = '/'.join(formatted_file.split('/')[:-1]) + '/' \
                 if not formatted_file.endswith('/') else formatted_file
             pathlib.Path(dirs).mkdir(parents=True, exist_ok=True)
 
@@ -41,7 +39,6 @@ def create_files(root_dir: str, project_details: Union[Dict[str, List[Dict[str, 
 
 
 class Settings:
-
     __SETTINGS_FILE = "settings.ini"
 
     def __init__(self):

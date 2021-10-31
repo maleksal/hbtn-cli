@@ -1,5 +1,6 @@
-from core import *
 import click
+
+from core import *
 
 settings = Settings()
 
