@@ -19,6 +19,7 @@ setup(
         "Click==7.1",
         "requests",
         "lxml",
+        "wheel",
     ],
     python_requires='>=3.5',
     classifiers=[
@@ -29,6 +30,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        hbtn=main:main
+        hbtn=core.interface:main
     '''
 )
