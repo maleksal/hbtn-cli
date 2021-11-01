@@ -19,7 +19,7 @@ setup(
         "Click==7.1",
         "requests",
         "lxml",
-        "wheel"
+        "wheel",
     ],
     python_requires='>=3.5',
     classifiers=[
