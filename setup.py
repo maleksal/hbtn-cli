@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='hbtn-cli',
-    version='0.0.1',
+    version='2.0.0',
     author='Malek Salem',
     author_email='1419@holbertonschool.com',
     license="MIT License",
