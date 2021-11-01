@@ -34,8 +34,9 @@ def create_files(root_dir: str, project_details: Union[Dict[str, List[Dict[str, 
                 if not formatted_file.endswith('/') else formatted_file
             pathlib.Path(dirs).mkdir(parents=True, exist_ok=True)
 
-            with open(formatted_file, 'w') as f:
-                f.write("")
+            if not formatted_file.endswith('/'):
+                with open(formatted_file, 'w') as f:
+                    f.write("")
 
 
 class Settings:
