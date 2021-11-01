@@ -2,8 +2,6 @@
 
 Automates the Creation of  all necessary files of a project. by supplying one or more URL.
 
-<img src="https://github.com/maleksal/hbtn-cli/blob/main/demo.gif"  style="zoom:150%;" />
-
 ## Install
 
 ```bash
